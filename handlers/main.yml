@@ -1,2 +1,5 @@
 ---
-# handlers file for filebeat-role
+- name: restart filebeat
+  service:
+    name: filebeat
+    state: restarted
