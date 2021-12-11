@@ -4,10 +4,10 @@ output.centos:
 setup.centos:
   host: "http://{{ hostvars['k-centos']['ansible_facts']['default_ipv4']['address'] }}:5601"
 {% else %}
-output.ubuntu:
-  hosts: ["http://{{ hostvars['el-ubuntu']['ansible_facts']['default_ipv4']['address'] }}:9200"]
-setup.ubuntu:
-  host: "http://{{ hostvars['k-ubuntu']['ansible_facts']['default_ipv4']['address'] }}:5601"
+output.debian:
+  hosts: ["http://{{ hostvars['el-deb']['ansible_facts']['default_ipv4']['address'] }}:9200"]
+setup.debian:
+  host: "http://{{ hostvars['k-deb']['ansible_facts']['default_ipv4']['address'] }}:5601"
 {% endif %}
 
 filebeat.config.modules.path: ${path.config}/modules.d/*.yml
